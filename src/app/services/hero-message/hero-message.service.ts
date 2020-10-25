@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class HeroMessageService {
 
+    _timerId = 0;
+
     heroMessages: string[] = []; // heroMessages 缓存
 
     constructor() { }
@@ -12,7 +14,10 @@ export class HeroMessageService {
     // 往缓存中添加一条消息
     addHeroMessage(heroMessage: string) {
         this.heroMessages.push(heroMessage);
-        setTimeout(() => this.clearHeroMessages(), 1500);
+        if (this._timerId) {
+            clearTimeout(this._timerId);
+        }
+        this._timerId = setTimeout(() => this.clearHeroMessages(), 10000);
     }
 
     // 清空缓存
