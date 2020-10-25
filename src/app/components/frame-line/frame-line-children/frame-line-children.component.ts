@@ -14,4 +14,8 @@ export class FrameLineChildrenComponent implements OnInit {
 
     ngOnInit(): void {}
 
+    trackByFn(index, item) {
+        return item.dataAttr;
+    }
+
 }

@@ -1,6 +1,67 @@
+@import "./frame-detail/frame-detail.component.scss";
 .frame-line-item {
   box-sizing: border-box;
   width: 100%;
+  .top-y-line-box {
+    box-sizing: border-box;
+    height: 4vh;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .top-y-line-x-wrapper {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      .top-y-line-x {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        border-top: 1px solid $border-frame-line;
+        position: absolute;
+        top: 0;
+        left: 0;
+        &.only-one {
+          display: none;
+        }
+        &.first-frame {
+          left: 50%;
+        }
+        &.last-frame {
+          left: -50%;
+        }
+      }
+    }
+    .top-y-line-y {
+      box-sizing: border-box;
+      width: 1px;
+      height: 100%;
+      background-color: $border-frame-line;
+      position: relative;
+      .top-y-line-y-arrow {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        bottom: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        &::before {
+          display: block;
+          content: '';
+          width: 100%;
+          height: 100%;
+          border-bottom: 1px solid $border-frame-line;
+          border-left: 1px solid $border-frame-line;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
   .frame-line-item-box {
     box-sizing: border-box;
     width: 100%;
@@ -12,21 +73,28 @@
       justify-content: center;
       .frame-line-item-content {
         box-sizing: border-box;
-        padding: 26px;
-        border: 1px solid #b88de2;
+        width: 20%;
+        min-width: 100px;
+        padding: 4px 16px;
+        border: 1px solid $border-frame-line;
       }
     }
-    .item-y-line-box {
+    .bottom-y-line-box {
       box-sizing: border-box;
       height: 4vh;
+      min-height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
-      .item-y-line {
+      .bottom-y-line {
         width: 1px;
         height: 100%;
-        background-color: #b88de2;
+        background-color: $border-frame-line;
       }
     }
+  }
+  .frame-line-children {
+    display: flex;
+    justify-content: center;
   }
 }

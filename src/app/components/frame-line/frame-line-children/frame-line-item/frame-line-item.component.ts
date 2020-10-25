@@ -8,6 +8,10 @@ import { frameLineItemType } from '../../frame-line.declare';
 })
 export class FrameLineItemComponent implements OnInit {
 
+    @Input() onlyOne: Boolean;
+    @Input() firstFrame: Boolean;
+    @Input() lastFrame: Boolean;
+
     @Input() frameLineItem: frameLineItemType;
 
     constructor() {}

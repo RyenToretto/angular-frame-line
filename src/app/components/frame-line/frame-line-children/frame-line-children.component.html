@@ -1,5 +1,9 @@
 <div class="frame-line-children">
-  <div *ngFor='let frameLineItem of frameLineChildren'>
-    <app-frame-line-item [frameLineItem]="frameLineItem"></app-frame-line-item>
-  </div>
+  <ng-container *ngFor='let frameLineItem of frameLineChildren; index as i; trackBy: trackByFn'>
+    <app-frame-line-item
+      [frameLineItem]="frameLineItem"
+      [onlyOne]="frameLineChildren.length === 1"
+      [firstFrame]="frameLineChildren.length >= 1 && i === 0"
+      [lastFrame]="frameLineChildren.length >= 1 && i === frameLineChildren.length - 1"></app-frame-line-item>
+  </ng-container>
 </div>

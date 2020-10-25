@@ -6,6 +6,22 @@ import { frameLineItemType } from './frame-line.declare';
     providedIn: 'root'
 })
 export class FrameLineService {
+    // frameLineAttr 缓存
+    frameLineAttr = {
+        attrChina: { open: true },
+
+        attrZhangJiaJie: { open: false },
+        attrCiLi: { open: false },
+
+        attrHobby: { open: false },
+        attrRouRou: { open: false },
+        attrWuGui: { open: false },
+
+        attrJiLin: { open: false },
+        attrChangchun: { open: false },
+        attrLiaoYuan: { open: false },
+        attrBorn: { open: false },
+    };
 
     // frameLineData 缓存
     frameLineData: frameLineItemType[] = [
@@ -23,6 +39,23 @@ export class FrameLineService {
                             topFrame: false,
                             title: '张家界市',
                             dataAttr: 'attrCiLi',
+                        }
+                    ]
+                },
+                {
+                    topFrame: false,
+                    title: '爱好',
+                    dataAttr: 'attrHobby',
+                    frameLineChildren: [
+                        {
+                            topFrame: false,
+                            title: '肉肉',
+                            dataAttr: 'attrRouRou',
+                        },
+                        {
+                            topFrame: false,
+                            title: '乌龟',
+                            dataAttr: 'attrWuGui',
                         }
                     ]
                 },

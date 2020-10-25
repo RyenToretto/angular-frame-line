@@ -1,16 +1,30 @@
 <div class="frame-line-item">
+  <div *ngIf="!frameLineItem.topFrame;" class="top-y-line-box">
+    <div class="top-y-line-x-wrapper">
+      <div class="top-y-line-x" [ngClass]="{
+      'only-one': onlyOne,
+      'first-frame': firstFrame,
+      'last-frame': lastFrame
+      }"></div>
+    </div>
+
+    <div class="top-y-line-y">
+      <div class="top-y-line-y-arrow"></div>
+    </div>
+  </div>
+
   <div class="frame-line-item-box">
     <div class="frame-line-item-wrapper">
       <div class="frame-line-item-content">
         <div class="frame-line-item-title">{{ frameLineItem.title }}</div>
-        <div class="frame-line-item-detail">
-          frameLineItem: <span>{{ frameLineItem | json}}</span>
-        </div>
+        <app-frame-detail [frameDetail]="frameLineItem"></app-frame-detail>
       </div>
     </div>
 
-    <div class="item-y-line-box">
-      <div class="item-y-line"></div>
+    <div class="bottom-y-line-box" *ngIf="
+    frameLineItem.frameLineChildren
+     && frameLineItem.frameLineChildren.length > 1">
+      <div class="bottom-y-line"></div>
     </div>
   </div>
   <app-frame-line-children [frameLineChildren]="frameLineItem.frameLineChildren"></app-frame-line-children>

@@ -16,6 +16,7 @@ import { SvgComponent } from '../components/svg/svg.component';
 import { FrameLineComponent} from '../components/frame-line/frame-line.component';
 import { FrameLineChildrenComponent } from '../components/frame-line/frame-line-children/frame-line-children.component';
 import { FrameLineItemComponent } from '../components/frame-line/frame-line-children/frame-line-item/frame-line-item.component';
+import { FrameDetailComponent } from '../components/frame-line/frame-line-children/frame-line-item/frame-detail/frame-detail.component';
 
 import {HoverChangeBgColorDirective} from './directives/hover-change-bg-color.directive';
 import {VueLikeElseDirective} from './directives/vue-like-else.directive';
@@ -33,6 +34,7 @@ const SHARED_COMPONENT = [
     FrameLineComponent,
     FrameLineChildrenComponent,
     FrameLineItemComponent,
+    FrameDetailComponent,
     SvgComponent
 ];
 
