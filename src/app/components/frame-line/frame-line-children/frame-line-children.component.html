@@ -1,7 +1,5 @@
 <div class="frame-line-children">
-  <div>frame-line-children.component.html</div>
-
   <div *ngFor='let frameLineItem of frameLineChildren'>
-    frameLineItem: <span>{{ frameLineItem | json}}</span>
+    <app-frame-line-item [frameLineItem]="frameLineItem"></app-frame-line-item>
   </div>
 </div>

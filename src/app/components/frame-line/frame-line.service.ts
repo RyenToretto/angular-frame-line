@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { frameLineItem } from './frame-line.declare';
+import { frameLineItemType } from './frame-line.declare';
 
 @Injectable({
     providedIn: 'root'
@@ -8,12 +8,17 @@ import { frameLineItem } from './frame-line.declare';
 export class FrameLineService {
 
     // frameLineData 缓存
-    frameLineData: frameLineItem[] = [
+    frameLineData: frameLineItemType[] = [
         {
             topFrame: true,
             frameLineChildren: [
                 {
-                    topFrame: false
+                    topFrame: false,
+                    frameLineChildren: [
+                        {
+                            topFrame: false
+                        }
+                    ]
                 }
             ]
         },

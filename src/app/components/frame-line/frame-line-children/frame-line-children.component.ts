@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { frameLineItem } from '../frame-line.declare';
+import { frameLineItemType } from '../frame-line.declare';
 
 @Component({
     selector: 'app-frame-line-children',
@@ -8,7 +8,7 @@ import { frameLineItem } from '../frame-line.declare';
 })
 export class FrameLineChildrenComponent implements OnInit {
 
-    @Input() frameLineChildren: frameLineItem[];
+    @Input() frameLineChildren: frameLineItemType[];
 
     constructor() {}
 

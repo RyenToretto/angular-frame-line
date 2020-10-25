@@ -1,4 +1,4 @@
-export interface frameLineItem {
+export interface frameLineItemType {
     topFrame?: boolean;
-    frameLineChildren?: frameLineItem[];
+    frameLineChildren?: frameLineItemType[];
 }
