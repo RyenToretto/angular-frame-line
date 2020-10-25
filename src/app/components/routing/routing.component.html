@@ -7,21 +7,21 @@
 <h4 [appHoverChangeBgColor]="'#fafafa'"><a routerLink="/frame-line">routerLink to frame-line 调研 flow 框框线线</a></h4>
 
 <div class="grid grid-pad">
-    <a *ngFor="let routingHero of routingHeroes;
+  <a *ngFor="let routingHero of routingHeroes;
             let item=$implicit;let i=index; let arrLength=count;
             let isFirst=first; let isLast=last;
             let isEven=even; let isOdd=odd; trackBy: trackByItems"
-        class="col-1-4" routerLink="/hero_detail/{{routingHero.id}}">
-        <div class="module hero">
-            <br />item: {{item | json}}
-            <br />index: {{i}}
-            arrLength: {{arrLength}}
-            <br />isFirst: {{isFirst}}
-            isLast: {{isLast}}
-            <br />isEven: {{isEven}}
-            isOdd: {{isOdd}}
-            <br />
-            <h4>{{routingHero.name}}</h4>
-        </div>
-    </a>
+     class="col-1-4" routerLink="/hero_detail/{{routingHero.id}}">
+    <div class="module hero">
+      <br />item: {{item | json}}
+      <br />index: {{i}}
+      arrLength: {{arrLength}}
+      <br />isFirst: {{isFirst}}
+      isLast: {{isLast}}
+      <br />isEven: {{isEven}}
+      isOdd: {{isOdd}}
+      <br />
+      <h4>{{routingHero.name}}</h4>
+    </div>
+  </a>
 </div>

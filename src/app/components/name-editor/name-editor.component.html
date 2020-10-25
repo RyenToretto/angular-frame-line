@@ -1,14 +1,14 @@
 <p>
-    Value: {{ fcName.value }}
+  Value: {{ fcName.value }}
 </p>
 
 <label>
-    姓名:
-    <input type="text" [formControl]="fcName">
+  姓名:
+  <input type="text" [formControl]="fcName">
 </label>
 
 <p>
-    <button (click)="fcUpdateName()">Update Name</button>
+  <button (click)="fcUpdateName()">Update Name</button>
 </p>
 
 <br/>
@@ -16,15 +16,15 @@
 <br/>
 
 <form [formGroup]="formRegister" (ngSubmit)="handleSubmit()">
-    <label>帐号:
-        <input type="text" formControlName="username">
-    </label>
+  <label>帐号:
+    <input type="text" formControlName="username">
+  </label>
 
-    <label>密码:
-        <input type="text" formControlName="password">
-    </label>
+  <label>密码:
+    <input type="text" formControlName="password">
+  </label>
 
-    <button type="submit" [disabled]="!formRegister.valid">提交表单</button>
+  <button type="submit" [disabled]="!formRegister.valid">提交表单</button>
 </form>
 
 <br/>

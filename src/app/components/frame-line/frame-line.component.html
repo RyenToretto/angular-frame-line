@@ -1,7 +1,5 @@
 <div class="frame-line">
-    <h3>frame-line.component.html</h3>
+  <h3>frame-line.component.html</h3>
 
-    <div *ngFor='let frameLine of frameLineService.frameLineData'>
-        {{ frameLine }}
-    </div>
+  <app-frame-line-children [frameLineChildren]="frameLineService.frameLineData"></app-frame-line-children>
 </div>

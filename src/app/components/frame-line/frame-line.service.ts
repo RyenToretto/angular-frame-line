@@ -1,21 +1,28 @@
 import { Injectable } from '@angular/core';
 
+import { frameLineItem } from './frame-line.declare';
+
 @Injectable({
     providedIn: 'root'
 })
 export class FrameLineService {
 
-    frameLineData: string[] = [
-        '0',
-        '1',
-        '22',
-        '333',
-    ]; // frameLineData 缓存
+    // frameLineData 缓存
+    frameLineData: frameLineItem[] = [
+        {
+            topFrame: true,
+            frameLineChildren: [
+                {
+                    topFrame: false
+                }
+            ]
+        },
+    ];
 
     constructor() {}
 
-    // 往缓存中添加一条消息
-    addFrameLine(heroMessage: string) {}
+    // 往缓存中 添加一个 item
+    addFrameLine() {}
 
     // 清空缓存
     clearFrameLine() {}

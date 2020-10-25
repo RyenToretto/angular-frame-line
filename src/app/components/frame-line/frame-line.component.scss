@@ -1,1 +1,7 @@
-.frame-line {}
+@import './frame-line-children/frame-line-children.component.scss';
+
+.frame-line {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #f5f5f5;
+}
