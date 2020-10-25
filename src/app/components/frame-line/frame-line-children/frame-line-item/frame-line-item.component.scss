@@ -1,4 +1,32 @@
 .frame-line-item {
   box-sizing: border-box;
   width: 100%;
+  .frame-line-item-box {
+    box-sizing: border-box;
+    width: 100%;
+    .frame-line-item-wrapper {
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .frame-line-item-content {
+        box-sizing: border-box;
+        padding: 26px;
+        border: 1px solid #b88de2;
+      }
+    }
+    .item-y-line-box {
+      box-sizing: border-box;
+      height: 4vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .item-y-line {
+        width: 1px;
+        height: 100%;
+        background-color: #b88de2;
+      }
+    }
+  }
 }

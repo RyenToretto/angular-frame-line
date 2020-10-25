@@ -1,4 +1,17 @@
 <div class="frame-line-item">
-  frameLineItem: <span>{{ frameLineItem | json}}</span>
+  <div class="frame-line-item-box">
+    <div class="frame-line-item-wrapper">
+      <div class="frame-line-item-content">
+        <div class="frame-line-item-title">{{ frameLineItem.title }}</div>
+        <div class="frame-line-item-detail">
+          frameLineItem: <span>{{ frameLineItem | json}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="item-y-line-box">
+      <div class="item-y-line"></div>
+    </div>
+  </div>
   <app-frame-line-children [frameLineChildren]="frameLineItem.frameLineChildren"></app-frame-line-children>
 </div>
