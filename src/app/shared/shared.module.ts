@@ -12,6 +12,7 @@ import { NameEditorComponent } from '../components/name-editor/name-editor.compo
 import { HeroDetailComponent } from '../components/hero-detail/hero-detail.component';
 import { HeroMessagesComponent } from '../components/hero-messages/hero-messages.component';
 import { SvgComponent } from '../components/svg/svg.component';
+import { FrameLineComponent} from '../components/frame-line/frame-line.component';
 
 import {HoverChangeBgColorDirective} from './directives/hover-change-bg-color.directive';
 import {VueLikeElseDirective} from './directives/vue-like-else.directive';
@@ -26,6 +27,7 @@ const SHARED_COMPONENT = [
     NameEditorComponent,
     HeroDetailComponent,
     HeroMessagesComponent,
+    FrameLineComponent,
     SvgComponent
 ];
 
