@@ -89,13 +89,32 @@ export class FrameLineService {
 
     constructor() {}
 
-    // 获取【增加按钮】的 item
-    getAddBtnParent() {
-
+    // 新并行元素
+    addFrameLineIntoArray(parentFrameLine) {
+        if (parentFrameLine.frameLineChildren) {
+            parentFrameLine.frameLineChildren.push({
+                topFrame: false,
+                title: '存在数组 则新增',
+                mapKey: 'keyNewBingXing' + Date.now(),
+            });
+        } else { // 不存在数组 则创建数组
+            parentFrameLine.frameLineChildren = [{
+                topFrame: false,
+                title: '不存在数组 则创建数组',
+                mapKey: 'keyNewBingXing' + Date.now(),
+            }];
+        }
     }
 
-    // 往缓存中 添加一个 item
-    addFrameLine() {}
+    // 新 item
+    addFrameLineItem(parentFrameLine) {
+        parentFrameLine.frameLineChildren = [{
+            topFrame: false,
+            title: '新 action',
+            mapKey: 'keyNewAction' + Date.now(),
+            frameLineChildren: parentFrameLine.frameLineChildren
+        }];
+    }
 
     // 清空缓存
     clearFrameLine() {}

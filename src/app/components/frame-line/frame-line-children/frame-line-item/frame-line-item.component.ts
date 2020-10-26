@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { frameLineItemType } from '../../frame-line.declare';
+import {FrameLineService} from "../../frame-line.service";
 
 @Component({
     selector: 'app-frame-line-item',
@@ -16,7 +17,7 @@ export class FrameLineItemComponent implements OnInit {
 
     addFrameItemPopper: boolean = false;
 
-    constructor() {}
+    constructor(private frameLineService: FrameLineService) {}
 
     ngOnInit(): void {}
 
@@ -25,39 +26,20 @@ export class FrameLineItemComponent implements OnInit {
     }
 
     // 新并行元素
-    addFrameItemIntoArray(frameLineItem): void {
-        console.log('--addFrameItemIntoArray(frameLineItem)-->');
-        console.log(frameLineItem);
-        if (frameLineItem.frameLineChildren) {
-            frameLineItem.frameLineChildren.push({
-                topFrame: false,
-                title: '存在数组 则新增',
-                mapKey: 'keyNewBingXing' + Date.now(),
-            });
-        } else { // 不存在数组 则创建数组
-            frameLineItem.frameLineChildren = [{
-                topFrame: false,
-                title: '不存在数组 则创建数组',
-                mapKey: 'keyNewBingXing' + Date.now(),
-            }];
-        }
+    addFrameItemIntoArray(parentFrameLine): void {
+        console.log('--addFrameItemIntoArray(parentFrameLine)-->');
+        console.log(parentFrameLine);
+
+        this.frameLineService.addFrameLineIntoArray(parentFrameLine);
         this.addFrameItemPopper = false; // 最后关闭 popper
     }
 
     // 新 action
-    addFrameItem(frameLineItem): void {
-        console.log('--addFrameItem(frameLineItem)-->');
-        console.log(frameLineItem);
+    addFrameItem(parentFrameLine): void {
+        console.log('--addFrameItem(parentFrameLine)-->');
+        console.log(parentFrameLine);
 
-        const newChildren = [{
-            topFrame: false,
-            title: '新 action',
-            mapKey: 'keyNewAction' + Date.now(),
-            frameLineChildren: frameLineItem.frameLineChildren
-        }];
-
-        frameLineItem.frameLineChildren = newChildren;
-
+        this.frameLineService.addFrameLineItem(parentFrameLine);
         this.addFrameItemPopper = false; // 最后关闭 popper
     }
 
