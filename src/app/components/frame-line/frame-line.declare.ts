@@ -1,6 +1,6 @@
 export interface frameLineItemType {
     topFrame?: boolean;
     title?: string;
-    dataAttr?: string;
+    mapKey?: string;
     frameLineChildren?: frameLineItemType[];
 }

@@ -6,21 +6,21 @@ import { frameLineItemType } from './frame-line.declare';
     providedIn: 'root'
 })
 export class FrameLineService {
-    // frameLineAttr 缓存
-    frameLineAttr = {
-        attrChina: { open: true },
+    // frameLineMap 缓存
+    frameLineMap = {
+        keyChina: { open: true },
 
-        attrZhangJiaJie: { open: false },
-        attrCiLi: { open: false },
+        keyZhangJiaJie: { open: false },
+        keyCiLi: { open: false },
 
-        attrHobby: { open: false },
-        attrRouRou: { open: false },
-        attrWuGui: { open: false },
+        keyHobby: { open: false },
+        keyRouRou: { open: false },
+        keyWuGui: { open: false },
 
-        attrJiLin: { open: false },
-        attrChangchun: { open: false },
-        attrLiaoYuan: { open: false },
-        attrBorn: { open: false },
+        keyJiLin: { open: false },
+        keyChangchun: { open: false },
+        keyLiaoYuan: { open: false },
+        keyBorn: { open: false },
     };
 
     // frameLineData 缓存
@@ -28,56 +28,56 @@ export class FrameLineService {
         {
             topFrame: true,
             title: '中国',
-            dataAttr: 'attrChina',
+            mapKey: 'keyChina',
             frameLineChildren: [
                 {
                     topFrame: false,
                     title: '湖南省',
-                    dataAttr: 'attrZhangJiaJie',
+                    mapKey: 'keyZhangJiaJie',
                     frameLineChildren: [
                         {
                             topFrame: false,
                             title: '张家界市',
-                            dataAttr: 'attrCiLi',
+                            mapKey: 'keyCiLi',
                         }
                     ]
                 },
                 {
                     topFrame: false,
                     title: '爱好',
-                    dataAttr: 'attrHobby',
+                    mapKey: 'keyHobby',
                     frameLineChildren: [
                         {
                             topFrame: false,
                             title: '肉肉',
-                            dataAttr: 'attrRouRou',
+                            mapKey: 'keyRouRou',
                         },
                         {
                             topFrame: false,
                             title: '乌龟',
-                            dataAttr: 'attrWuGui',
+                            mapKey: 'keyWuGui',
                         }
                     ]
                 },
                 {
                     topFrame: false,
                     title: '吉林省',
-                    dataAttr: 'attrJiLin',
+                    mapKey: 'keyJiLin',
                     frameLineChildren: [
                         {
                             topFrame: false,
                             title: '长春市',
-                            dataAttr: 'attrChangchun',
+                            mapKey: 'keyChangchun',
                         },
                         {
                             topFrame: false,
                             title: '辽源市',
-                            dataAttr: 'attrLiaoYuan',
+                            mapKey: 'keyLiaoYuan',
                             frameLineChildren: [
                                 {
                                     topFrame: false,
                                     title: '出生地',
-                                    dataAttr: 'attrBorn',
+                                    mapKey: 'keyBorn',
                                 }
                             ]
                         }
@@ -88,6 +88,11 @@ export class FrameLineService {
     ];
 
     constructor() {}
+
+    // 获取【增加按钮】的 item
+    getAddBtnParent() {
+
+    }
 
     // 往缓存中 添加一个 item
     addFrameLine() {}
