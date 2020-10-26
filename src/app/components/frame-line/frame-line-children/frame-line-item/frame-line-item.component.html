@@ -21,10 +21,23 @@
       </div>
     </div>
 
-    <div class="bottom-y-line-box" *ngIf="
-    frameLineItem.frameLineChildren
-     && frameLineItem.frameLineChildren.length > 1">
-      <div class="bottom-y-line"></div>
+    <div class="bottom-y-line-box" [ngClass]="{
+      'longer-y-line': frameLineItem.frameLineChildren
+        && frameLineItem.frameLineChildren.length > 1
+      }"
+    >
+      <div class="bottom-y-line">
+        <div class="add-frame-item-box">
+          <div class="add-frame-item-btn" (click)="toggleAddFrameItemPopper()">+</div>
+          <div class="add-frame-item-popper" [ngClass]="{
+            'active': addFrameItemPopper
+            }"
+          >
+            <div class="add-frame-into-array unselected-able" (click)="addFrameItemIntoArray(frameLineItem)">增加一个并行元素</div>
+            <div class="add-frame-item unselected-able" (click)="addFrameItem(frameLineItem)">增加一个 action</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <app-frame-line-children [frameLineChildren]="frameLineItem.frameLineChildren"></app-frame-line-children>

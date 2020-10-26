@@ -44,3 +44,10 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.unselected-able {
+  -webkit-user-select: auto;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
