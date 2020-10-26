@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    .top-y-line-x-wrapper {
+    .top-x-line-wrapper {
       box-sizing: border-box;
       width: 100%;
       height: 100%;
@@ -18,7 +18,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      .top-y-line-x {
+      .top-x-line {
         box-sizing: border-box;
         width: 100%;
         height: 100%;
@@ -37,13 +37,13 @@
         }
       }
     }
-    .top-y-line-y {
+    .top-y-line {
       box-sizing: border-box;
       width: 1px;
       height: 100%;
       background-color: $border-frame-line;
       position: relative;
-      .top-y-line-y-arrow {
+      .top-y-line-arrow {
         width: 10px;
         height: 10px;
         position: absolute;
