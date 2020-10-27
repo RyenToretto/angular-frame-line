@@ -16,7 +16,10 @@
   <div class="frame-line-item-box">
     <div class="frame-line-item-wrapper">
       <div class="frame-line-item-content">
-        <div class="frame-line-item-title">{{ frameLineItem.title }}</div>
+        <div class="frame-line-item-head unselected-able">
+          <div class="frame-line-item-title" (click)="toggleFrameItemDetail()">{{ frameLineItem.title }}</div>
+          <div class="frame-line-item-menu">···</div>
+        </div>
         <app-frame-detail [frameDetail]="frameLineItem"></app-frame-detail>
       </div>
     </div>
@@ -27,14 +30,14 @@
       }"
     >
       <div class="bottom-y-line">
-        <div class="add-frame-item-box">
-          <div class="add-frame-item-btn" (click)="toggleAddFrameItemPopper()">+</div>
-          <div class="add-frame-item-popper" [ngClass]="{
+        <div class="add-frame-line-item-box">
+          <div class="add-frame-line-item-btn" (click)="toggleAddFrameItemPopper()">+</div>
+          <div class="add-frame-line-item-popper" [ngClass]="{
             'active': addFrameItemPopper
             }"
           >
             <div class="add-frame-into-array unselected-able" (click)="addFrameItemIntoArray(frameLineItem)">增加一个并行元素</div>
-            <div class="add-frame-item unselected-able" (click)="addFrameItem(frameLineItem)">增加一个 action</div>
+            <div class="add-frame-line-item unselected-able" (click)="addFrameItem(frameLineItem)">增加一个 action</div>
           </div>
         </div>
       </div>

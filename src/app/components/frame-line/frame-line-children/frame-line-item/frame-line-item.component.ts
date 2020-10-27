@@ -21,6 +21,10 @@ export class FrameLineItemComponent implements OnInit {
 
     ngOnInit(): void {}
 
+    toggleFrameItemDetail(): void {
+        this.frameLineService.toggleFrameItemOpen(this.frameLineItem);
+    }
+
     toggleAddFrameItemPopper(): void {
         this.addFrameItemPopper = !this.addFrameItemPopper;
     }

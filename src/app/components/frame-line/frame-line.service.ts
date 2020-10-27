@@ -89,31 +89,41 @@ export class FrameLineService {
 
     constructor() {}
 
+    // 折叠/打开
+    toggleFrameItemOpen(parentFrameLine) {
+        this.frameLineMap[parentFrameLine.mapKey].open = !this.frameLineMap[parentFrameLine.mapKey].open;
+    }
+
     // 新并行元素
     addFrameLineIntoArray(parentFrameLine) {
+        const mapKey = 'keyNewBingXing' + Date.now();
+
         if (parentFrameLine.frameLineChildren) {
             parentFrameLine.frameLineChildren.push({
                 topFrame: false,
                 title: '存在数组 则新增',
-                mapKey: 'keyNewBingXing' + Date.now(),
+                mapKey,
             });
         } else { // 不存在数组 则创建数组
             parentFrameLine.frameLineChildren = [{
                 topFrame: false,
                 title: '不存在数组 则创建数组',
-                mapKey: 'keyNewBingXing' + Date.now(),
+                mapKey,
             }];
         }
+        this.frameLineMap[mapKey] = { open: false };
     }
 
     // 新 item
     addFrameLineItem(parentFrameLine) {
+        const mapKey = 'keyNewAction' + Date.now();
         parentFrameLine.frameLineChildren = [{
             topFrame: false,
             title: '新 action',
-            mapKey: 'keyNewAction' + Date.now(),
+            mapKey,
             frameLineChildren: parentFrameLine.frameLineChildren
         }];
+        this.frameLineMap[mapKey] = { open: false };
     }
 
     // 清空缓存

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import {frameLineItemType} from '../../../frame-line.declare';
+import {FrameLineService} from '../../../frame-line.service';
 
 @Component({
     selector: 'app-frame-detail',
@@ -9,7 +10,7 @@ import {frameLineItemType} from '../../../frame-line.declare';
 export class FrameDetailComponent implements OnInit {
     @Input() frameDetail: frameLineItemType;
 
-    constructor() {}
+    constructor(public frameLineService: FrameLineService) {}
 
     ngOnInit(): void {}
 

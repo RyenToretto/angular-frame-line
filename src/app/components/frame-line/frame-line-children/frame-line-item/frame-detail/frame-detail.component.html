@@ -1,3 +1,5 @@
-<div class="frame-detail">
-  frame-detail: <span>{{ frameDetail | json}}</span>
-</div>
+<section class="frame-detail">
+  <div class="frame-detail-fold" [ngStyle]="{ height: frameLineService.frameLineMap[frameDetail.mapKey].open ? 'auto' : '0' }">
+    frame-detail: <span>{{ frameDetail | json}}</span>
+  </div>
+</section>

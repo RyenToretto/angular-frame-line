@@ -1,4 +1,8 @@
 .frame-detail {
   box-sizing: border-box;
   width: 100%;
+  .frame-detail-fold {
+    box-sizing: border-box;
+    overflow: hidden;
+  }
 }

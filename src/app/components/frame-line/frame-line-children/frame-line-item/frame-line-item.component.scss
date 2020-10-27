@@ -72,11 +72,39 @@
       align-items: center;
       justify-content: center;
       .frame-line-item-content {
+        padding: 0;
         box-sizing: border-box;
         width: 20%;
         min-width: 100px;
-        padding: 4px 16px;
         border: 1px solid $border-frame-line;
+        .frame-line-item-head {
+          box-sizing: border-box;
+          width: 100%;
+          height: 54px;
+          line-height: 54px;
+          position: relative;
+          cursor: pointer;
+          .frame-line-item-title {
+            padding: 0 0 0 16px;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+          }
+          .frame-line-item-menu {
+            box-sizing: border-box;
+            width: 24px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
       }
     }
     .bottom-y-line-box {
@@ -91,7 +119,7 @@
         height: 100%;
         background-color: $border-frame-line;
         position: relative;
-        .add-frame-item-box {
+        .add-frame-line-item-box {
           box-sizing: border-box;
           width: 30px;
           height: 40px;
@@ -101,7 +129,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          .add-frame-item-btn {
+          .add-frame-line-item-btn {
             box-sizing: border-box;
             width: 20px;
             height: 20px;
@@ -114,7 +142,7 @@
             justify-content: center;
             cursor: pointer;
           }
-          .add-frame-item-popper {
+          .add-frame-line-item-popper {
             display: none;
             box-sizing: border-box;
             width: 160px;
@@ -126,7 +154,7 @@
             left: 100%;
             z-index: 9;
             .add-frame-into-array,
-            .add-frame-item {
+            .add-frame-line-item {
               box-sizing: border-box;
               width: 100%;
               height: 50%;
